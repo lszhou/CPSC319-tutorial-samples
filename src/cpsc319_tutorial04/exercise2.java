@@ -1,8 +1,4 @@
-/* If you would like to refer to this file, you may need to change the following part:
- * - package 319
- * - myFile path. No change to this file, myFile will be directly created in current package.
- * */
-package cpsc319;
+package cpsc319_tutorial04;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -27,12 +23,11 @@ public class exercise2 {
 		PrintWriter out = new PrintWriter("myFile.txt");
 		for (int j = 0; j < arr.length; j++) {
 			out.println(arr[j]);
-		}
+		}	
 		long endTxt = System.nanoTime();
-		out.println(".txt Printing Running Time: " + (endTxt - startTxt)
-				+ " nanoseconds.");
+		out.println(".txt Printing Running Time: " + (endTxt - startTxt) + " nanoseconds.");
 		out.close();
-
+		
 	}
 
 }
