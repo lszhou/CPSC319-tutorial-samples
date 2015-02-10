@@ -1,4 +1,4 @@
-package cpsc319_tutorial04;
+package T04;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;

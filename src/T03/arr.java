@@ -1,4 +1,4 @@
-package cpsc319_tutorial01_03;
+package T03;
 
 public class arr {
 	public static void main(String[] args) {
