@@ -1,5 +1,5 @@
 /*Following package name should be changed to your own package name*/
-package T06;
+package T07;
 
 /*The following self-defined single linked list class implements the following operations:
 	- addFirst

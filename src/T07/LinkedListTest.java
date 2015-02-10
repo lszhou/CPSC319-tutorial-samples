@@ -1,4 +1,4 @@
-package T06;
+package T07;
 
 public class LinkedListTest {
 
