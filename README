@@ -13,3 +13,6 @@ exercise2 are also offered as snapshot and .txt file.
 - A screenshot about how to parse command line by eclipse.
 
 -T07 sample codes "SingleLinkedList" class and test cases. 
+
+-T08 sample code, implementation of compareTo(Object o) methods and show how to apply quick sorting algorithm to an array of objects. 
+It could be easily converted to an array of reference. 
