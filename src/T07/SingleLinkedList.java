@@ -2,17 +2,17 @@
 package T07;
 
 /*The following self-defined single linked list class implements the following operations:
-	- addFirst
-	- addLast
-	- insertAfter
-	- remove
-	- display
-*/
+ - addFirst
+ - addLast
+ - insertAfter
+ - remove
+ - display
+ */
 public class SingleLinkedList<AnyType> {
 
 	/*******************************************************
 	 * 
-	 * The Node class
+	 * The (Inner) Node class
 	 * 
 	 ********************************************************/
 	private static class Node<AnyType> {
@@ -20,11 +20,10 @@ public class SingleLinkedList<AnyType> {
 		private Node<AnyType> next;
 
 		/* Constructor with one argument. */
-		public Node(AnyType data) {
-			this.data = data;
-			this.next = null;
-		}
-
+		/*
+		 * public Node(AnyType data) { this.data = data; this.next = null; }
+		 */
+		
 		/* Constructor with two arguments. */
 		public Node(AnyType data, Node<AnyType> next) {
 			this.data = data;
@@ -34,9 +33,10 @@ public class SingleLinkedList<AnyType> {
 
 	/* ******************************************************** */
 
+	//SinglelinkedList data field
 	private Node<AnyType> head;
 
-	/*Constructs an empty list.*/
+	/* Constructs an empty list. */
 	public SingleLinkedList() {
 		head = null;
 	}
