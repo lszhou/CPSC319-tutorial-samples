@@ -7,9 +7,12 @@ Good luck and have fun!
 
 /*----------------------------------------------------------------------------*/
 Following codes have been post in SRC folder:
+
 - some sample codes in the tutorial 01-03;
+
 - some sample codes in the tutorial 04 and my solution to exercise2. the output of
 exercise2 are also offered as snapshot and .txt file. 
+
 - A screenshot about how to parse command line by eclipse.
 
 -T07 sample codes "SingleLinkedList" class and test cases. 
@@ -18,3 +21,5 @@ exercise2 are also offered as snapshot and .txt file.
 It could be easily converted to an array of reference. 
 
 - T09 sample code (bufferReader) for BufferedReader, FileReader and sample.txt are uploaded.
+
+- T10 Stack interface and LinkedList Stack implementation is uploaded.

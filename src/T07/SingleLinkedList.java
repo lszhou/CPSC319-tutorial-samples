@@ -92,7 +92,7 @@ public class SingleLinkedList<AnyType> {
 	}
 
 	public void display() {
-		Node tmp = head;
+		Node<AnyType> tmp = head;
 		while (tmp != null) {
 			System.out.printf("-->" + tmp.data);
 			tmp = tmp.next;
