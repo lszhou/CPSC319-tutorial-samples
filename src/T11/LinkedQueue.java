@@ -5,12 +5,6 @@ public class LinkedQueue<T> implements Queue<T> {
 	private java.util.LinkedList<T> list = new java.util.LinkedList<T>();
 
 	@Override
-	public void clear() {
-		list.clear();
-
-	}
-
-	@Override
 	public boolean isEmpty() {
 		return list.isEmpty();
 	}
