@@ -10,10 +10,10 @@ package T12;
  * have implemented the compareTo() method, therefore for these data, this BST
  * could be used directly. For general object data (for example, self-defined 
  * student object), it should implements compareTo() method in advance, namely
- *  it should implement comparable interface in advance. 
+ * it should implement comparable interface in advance. 
  *  
- *  More information of comparable interface, please refer to
- *  "http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html"
+ * For more information of comparable interface, please refer to
+ * "http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html"
  * */
 
 public class BST<T extends Comparable<T>> implements BSTInterface<T> {
@@ -53,6 +53,22 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 	}
 
 	@Override
+	public boolean search(T toSearch) {
+		return search(root, toSearch);
+	}
+
+	private boolean search(Node<T> p, T toSearch) {
+		if (p == null)
+			return false;
+		else if (toSearch.compareTo(p.data) == 0)
+			return true;
+		else if (toSearch.compareTo(p.data) < 0)
+			return search(p.left, toSearch);
+		else
+			return search(p.right, toSearch);
+	}
+
+	@Override
 	public void insert(T toInsert) {
 		root = insert(root, toInsert);
 	}
@@ -71,23 +87,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 
 		return p;
 	}
-
-	@Override
-	public boolean search(T toSearch) {
-		return search(root, toSearch);
-	}
-
-	private boolean search(Node<T> p, T toSearch) {
-		if (p == null)
-			return false;
-		else if (toSearch.compareTo(p.data) == 0)
-			return true;
-		else if (toSearch.compareTo(p.data) < 0)
-			return search(p.left, toSearch);
-		else
-			return search(p.right, toSearch);
-	}
-
+	
 	@Override
 	public void delete(T toDelete) {
 		root = delete(root, toDelete);
