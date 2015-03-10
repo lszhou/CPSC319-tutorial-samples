@@ -1,8 +1,23 @@
 package T12;
 
-public class BST<T extends Comparable<T>> implements BSTInterface<T>{
+/*This class is a generic type implementation of Binary Search Tree which
+ * implements self-defined BST interface (BSTInterface.java). 
+ * 
+ * It is implemented by a private inner node class. In order to support
+ * the binary search property, we require the data stored in each node is
+ * comparable. Specially, BST class is of generic type T which is an ADT (class)
+ * extends Comparable interface. Since all java basic ADTs (integer, String, etc) 
+ * have implemented the compareTo() method, therefore for these data, this BST
+ * could be used directly. For general object data (for example, self-defined 
+ * student object), it should implements compareTo() method in advance, namely
+ *  it should implement comparable interface in advance. 
+ *  
+ *  More information of comparable interface, please refer to
+ *  "http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html"
+ * */
 
-	@SuppressWarnings("hiding")
+public class BST<T extends Comparable<T>> implements BSTInterface<T> {
+
 	private class Node<T> {
 		private T data;
 		private Node<T> left, right;
@@ -17,7 +32,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T>{
 			this(data, null, null);
 		}
 
-		public void printNode() {  //InOrder Traversal
+		public void printNode() { // InOrder Traversal
 			if (this.left != null) {
 				this.left.printNode();
 			}
@@ -31,7 +46,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T>{
 	private Node<T> root;
 
 	/**
-	 * Construct an empty BST; 
+	 * Construct an empty BST;
 	 */
 	public BST() {
 		root = null;
@@ -72,7 +87,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T>{
 		else
 			return search(p.right, toSearch);
 	}
-	
+
 	@Override
 	public void delete(T toDelete) {
 		root = delete(root, toDelete);
@@ -111,7 +126,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T>{
 
 	/*-----------------------BST Test-----------------------*/
 	public static void main(String[] args) {
-		int[] arrTest = {1, 4, 2, 3, 6, 5};
+		int[] arrTest = { 1, 4, 2, 3, 6, 5 };
 		BST<Integer> tree = new BST<>();
 
 		for (int i = 0; i < arrTest.length; i++) {
