@@ -1,5 +1,7 @@
 package T12;
 
+import java.util.ArrayDeque;
+
 /*This class is a generic type implementation of Binary Search Tree which
  * implements self-defined BST interface (BSTInterface.java). 
  * 
@@ -32,14 +34,52 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 			this(data, null, null);
 		}
 
-		public void printNode() { // InOrder Traversal
-			if (this.left != null) {
-				this.left.printNode();
-			}
+		/**
+		 * depth-first, PreOrder traversal, recursive implementation
+		 */
+		public void DFS_PreOrder_Display() {
+
 			System.out.print(this.data + " ");
-			if (this.right != null) {
-				this.right.printNode();
+
+			if (this.left != null) {
+				this.left.DFS_PreOrder_Display();
 			}
+
+			if (this.right != null) {
+				this.right.DFS_PreOrder_Display();
+			}
+		}
+
+		/**
+		 * depth-first, InOrder traversal, recursive implementation
+		 */
+		public void DFS_InOrder_Display() {
+
+			if (this.left != null) {
+				this.left.DFS_InOrder_Display();
+			}
+
+			System.out.print(this.data + " ");
+
+			if (this.right != null) {
+				this.right.DFS_InOrder_Display();
+			}
+		}
+
+		/**
+		 * depth-first, PostOrder traversal, recursive implementation
+		 */
+		public void DFS_PostOrder_Display() {
+
+			if (this.left != null) {
+				this.left.DFS_PostOrder_Display();
+			}
+
+			if (this.right != null) {
+				this.right.DFS_PostOrder_Display();
+			}
+
+			System.out.print(this.data + " ");
 		}
 	}
 
@@ -53,6 +93,10 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 	}
 
 	@Override
+	/**
+	 * Search the given data in the BST;
+	 * @param toSearch the given data
+	 */
 	public boolean search(T toSearch) {
 		return search(root, toSearch);
 	}
@@ -87,7 +131,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 
 		return p;
 	}
-	
+
 	@Override
 	public void delete(T toDelete) {
 		root = delete(root, toDelete);
@@ -120,8 +164,39 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		return p.data;
 	}
 
-	public void display() {
-		this.root.printNode();
+	public void DFS_PreOrder_Display() {
+		this.root.DFS_PreOrder_Display();
+		System.out.println();
+	}
+
+	public void DFS_InOrder_Display() {
+		this.root.DFS_InOrder_Display();
+		System.out.println();
+	}
+
+	public void DFS_PostOrder_Display() {
+		this.root.DFS_PostOrder_Display();
+		System.out.println();
+	}
+
+	public void BFS_LevelOder_Display() {
+		if (root == null) {
+			System.out.println("empty tree");
+			return;
+		}
+		ArrayDeque<Node<T>> queue = new ArrayDeque<>();
+		queue.add(root);
+		while (queue.isEmpty() == false) {
+			Node<T> node = queue.remove();
+			System.out.print(node.data + " ");
+			if (node.left != null) {
+				queue.add(node.left);
+			}
+			if (node.right != null) {
+				queue.add(node.right);
+			}
+		}
+		System.out.print(" ");
 	}
 
 	/*-----------------------BST Test-----------------------*/
@@ -132,8 +207,17 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		for (int i = 0; i < arrTest.length; i++) {
 			tree.insert(arrTest[i]);
 		}
+		System.out.println("Display all data via PreOrder traversal");
+		tree.DFS_PreOrder_Display();
 
-		tree.display();
+		System.out.println("Display all data via InOrder traversal");
+		tree.DFS_InOrder_Display();
+
+		System.out.println("Display all data via PostOrder traversal");
+		tree.DFS_PostOrder_Display();
+		
+		System.out.println("Display all data via LevelOrder traversal");
+		tree.BFS_LevelOder_Display();
 
 	}
 
