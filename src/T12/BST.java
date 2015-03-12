@@ -35,7 +35,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		}
 
 		/**
-		 * depth-first, PreOrder traversal, recursive implementation
+		 * recursive depth-first PreOrder traversal
 		 */
 		public void DFS_PreOrder_Display() {
 
@@ -51,7 +51,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		}
 
 		/**
-		 * depth-first, InOrder traversal, recursive implementation
+		 * recursive depth-first InOrder traversal
 		 */
 		public void DFS_InOrder_Display() {
 
@@ -67,7 +67,7 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		}
 
 		/**
-		 * depth-first, PostOrder traversal, recursive implementation
+		 * recursive depth-first PostOrder traversal
 		 */
 		public void DFS_PostOrder_Display() {
 
@@ -133,6 +133,13 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 	}
 
 	@Override
+	/**
+	 * Delete the data toDelete, considering the fllowing cases:
+	 *  - is not in BST
+	 *  - is a leaf (no children)
+	 *  - has one child
+	 *  - has two children
+	 */
 	public void delete(T toDelete) {
 		root = delete(root, toDelete);
 	}
@@ -156,7 +163,12 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		}
 		return p;
 	}
-
+	
+	/**
+	 * Get the smallest node data is the right subtree.
+	 * @param p current node I am in.
+	 * @return smallest data
+	 */
 	private T retrieveData(Node<T> p) {
 		while (p.right != null)
 			p = p.right;
@@ -178,15 +190,21 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 		this.root.DFS_PostOrder_Display();
 		System.out.println();
 	}
-
+	
+	/**
+	 * non-recursive Breadth-first traversal using stack;
+	 */
 	public void BFS_LevelOder_Display() {
+		
 		if (root == null) {
 			System.out.println("empty tree");
 			return;
 		}
+		
 		ArrayDeque<Node<T>> queue = new ArrayDeque<>();
 		queue.add(root);
-		while (queue.isEmpty() == false) {
+		
+		while (!queue.isEmpty()) {
 			Node<T> node = queue.remove();
 			System.out.print(node.data + " ");
 			if (node.left != null) {

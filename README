@@ -31,3 +31,5 @@ Array-based stack implementation is uploaded.
 ArrayQueue.java, LinkedQueue.java, Queue.java
 
 - T12 Binary Search Tree interface (BSTInterface.java) and its implementation is uploaded. 
+
+- T12 BST traversal implementations (recursive DFT implementation and non-recursive BFT implementation are uploaded.)
