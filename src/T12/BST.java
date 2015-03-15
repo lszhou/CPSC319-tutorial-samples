@@ -165,9 +165,9 @@ public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 	}
 	
 	/**
-	 * Get the smallest node data is the right subtree.
+	 * Get the smallest node data is the left subtree.
 	 * @param p current node I am in.
-	 * @return smallest data
+	 * @return biggest data in the left subtree
 	 */
 	private T retrieveData(Node<T> p) {
 		while (p.right != null)
