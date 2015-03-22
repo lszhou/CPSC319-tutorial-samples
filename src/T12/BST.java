@@ -20,6 +20,7 @@ import java.util.ArrayDeque;
 
 public class BST<T extends Comparable<T>> implements BSTInterface<T> {
 
+	@SuppressWarnings("hiding")
 	private class Node<T> {
 		private T data;
 		private Node<T> left, right;
