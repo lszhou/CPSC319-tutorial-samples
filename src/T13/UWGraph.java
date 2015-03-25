@@ -98,11 +98,11 @@ public class UWGraph {
 		}
 	}
 
-	/*--------------------------Queue-Based BFS Implementation------------------------------*/
+	/*--------------------------BFS Implementation------------------------------*/
 	public void BFS() {
 		int head = 0;
 		int rear = 0;
-		int[] queue = new int[mVexs.length]; // Array-based Queue
+		int[] queue = new int[mVexs.length]; 
 		boolean[] visited = new boolean[mVexs.length]; 
 
 		for (int i = 0; i < mVexs.length; i++)
@@ -147,9 +147,7 @@ public class UWGraph {
 				{ 'B', 'E' }, { 'B', 'F' }, { 'C', 'E' }, { 'D', 'C' },
 				{ 'E', 'B' }, { 'E', 'D' }, { 'F', 'G' } };
 		
-		UWGraph pG;
-
-		pG = new UWGraph(vexs, edges);
+		UWGraph pG = new UWGraph(vexs, edges);
 
 		pG.display();
 		pG.DFS();
