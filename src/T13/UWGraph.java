@@ -1,10 +1,10 @@
 package T13;
 
 /**
- * The following java class MatrixDG implements the data structure (Unweighed,
- * Undirected) Graph. There should be at least 2 ways to instantiate a graph. 1)
+ * The following java class UWGraph implements the data structure unweighed 
+ * Graph. There should be at least 2 ways to instantiate a graph. 1)
  * provide nodes (char[]) and edges (char[][]), and 2) provides nodes (char[])
- * and adjacency matrix (int[][]). This MatrixDG provides the a constructor
+ * and adjacency matrix (int[][]). This UWGraph provides the a constructor
  * implementing the first way. Your assignment#4 asks you to use the second one.
  * But they are almost the same.
  * 
@@ -145,7 +145,7 @@ public class UWGraph {
 		char[] vexs = { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
 		char[][] edges = new char[][] { { 'A', 'B' }, { 'B', 'C' },
 				{ 'B', 'E' }, { 'B', 'F' }, { 'C', 'E' }, { 'D', 'C' },
-				{ 'E', 'B' }, { 'E', 'D' }, { 'F', 'G' } };
+				{ 'E', 'B' }, { 'E', 'D' }, { 'F', 'G' } }; //unweighed, directed;
 		
 		UWGraph pG = new UWGraph(vexs, edges);
 
